@@ -1,6 +1,8 @@
 package org.sparta.shop99.dto;
 
+import lombok.Getter;
 
+@Getter
 public class ShopRequestDto {
 
     private int id;
