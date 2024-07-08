@@ -54,8 +54,7 @@ public class ShopRepository {
 
         return jdbcTemplate.query(sql, new RowMapper<ShopResponseDto>() {
             @Override
-            public ShopResponseDto mapRow(ResultSet rs, int rowNum) throws SQLException {
-                // SQL 의 결과로 받아온 Memo 데이터들을 MemoResponseDto 타입으로 변환해줄 메서드
+            public ShopResponseDto mapRow(ResultSet rs, int rowNum) throws SQLException {// SQL 의 결과로 받아온 Memo 데이터들을 MemoResponseDto 타입으로 변환해줄 메서드
                 int id = rs.getInt("id");
                 String title = rs.getString("title");
                 String content = rs.getString("content");
@@ -80,7 +79,7 @@ public class ShopRepository {
     }
 
     public Item findById(int id) {
-        // DB 조회
+
         String sql = "SELECT * FROM item WHERE id = ?";
 
         return jdbcTemplate.query(sql, resultSet -> {

@@ -33,10 +33,10 @@ public class ShopService {
 
     public int update(int id, ShopRequestDto shopRequestDto) {
 
-        // 해당 메모가 DB에 존재하는지 확인
+
         Item item = shopRepository.findById(id);
         if (item != null) {
-            // memo 내용 수정
+
             shopRepository.update(id, shopRequestDto);
 
             return id;
@@ -47,10 +47,10 @@ public class ShopService {
 
     public int delete(int id) {
 
-        // 해당 메모가 DB에 존재하는지 확인
+
         Item item = shopRepository.findById(id);
         if (item != null) {
-            // memo 삭제
+
             shopRepository.delete(id);
             return id;
         } else {
